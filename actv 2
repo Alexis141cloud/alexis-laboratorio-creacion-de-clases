@@ -1,0 +1,17 @@
+import datetime
+
+class Coche:
+    def __init__(self, marca, modelo, anio_fabricacion):
+        self.marca = marca                
+        self.modelo = modelo              
+        self.anio_fabricacion = anio_fabricacion  # Establece el año
+
+    def obtener_anios_desde_fabricacion(self):
+        anio_actual = datetime.date.today().year
+        return anio_actual - self.anio_fabricacion
+if __name__ == "__main__":
+    mi_coche = Coche("Toyota", "Corolla", 2015)
+
+    print(f"Coche: {mi_coche.marca} {mi_coche.modelo}")
+    print(f"Año de fabricación: {mi_coche.anio_fabricacion}")
+    print(f"Años transcurridos: {mi_coche.obtener_anios_desde_fabricacion()} años")
