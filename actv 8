@@ -1,0 +1,31 @@
+class Tienda:
+    def __init__(self, nombre_tienda):
+
+        self.nombre = nombre_tienda
+        self.lista_productos = []
+
+    def anadir_producto(self, producto):
+          self.lista_productos.append(producto)
+        print(f"Producto '{producto}' añadido.")
+
+    def eliminar_producto(self, producto):
+        if producto in self.lista_productos:
+            self.lista_productos.remove(producto)
+            print(f"Producto '{producto}' eliminado.")
+        else:
+            print(f"El producto '{producto}' no se encuentra en la tienda.")
+
+    def obtener_lista_productos(self):
+       return self.lista_productos
+
+if __name__ == "__main__":
+    tienda_ropa = Tienda("Moda Express")
+    
+    tienda_ropa.anadir_producto("Camisa")
+    tienda_ropa.anadir_producto("Pantalón")
+    tienda_ropa.anadir_producto("Zapatos")
+    
+    print(f"Inventario actual: {tienda_ropa.obtener_lista_productos()}")
+    
+    tienda_ropa.eliminar_producto("Camisa")
+    print(f"Inventario tras venta: {tienda_ropa.obtener_lista_productos()}")
