@@ -1,0 +1,28 @@
+class Empleado:
+    def __init__(self, nombre, edad, salario_mensual, cargo):
+        self.nombre = nombre
+        self.edad = edad
+        self.salario_mensual = salario_mensual
+        self.cargo = cargo
+
+    def obtener_nombre(self): return self.nombre
+    def establecer_nombre(self, nombre): self.nombre = nombre
+
+    def obtener_edad(self): return self.edad
+    def establecer_edad(self, edad): self.edad = edad
+
+    def obtener_salario(self): return self.salario_mensual
+    def establecer_salario(self, salario): self.salario_mensual = salario
+
+    def obtener_cargo(self): return self.cargo
+    def establecer_cargo(self, cargo): self.cargo = cargo
+
+    def calcular_salario_anual(self):
+        return self.salario_mensual * 12
+
+if __name__ == "__main__":
+    empleado1 = Empleado("Luis", 40, 2500, "Gerente de Proyectos")
+    
+    print(f"Empleado: {empleado1.obtener_nombre()} - {empleado1.obtener_cargo()}")
+    print(f"Salario mensual: ${empleado1.obtener_salario()}")
+    print(f"Salario anual (proyección): ${empleado1.calcular_salario_anual()}")
