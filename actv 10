@@ -1,0 +1,29 @@
+class Libro:
+    def __init__(self, titulo, autor, genero, numero_paginas):
+        self.titulo = titulo
+        self.autor = autor
+        self.genero = genero
+        self.numero_paginas = numero_paginas
+
+    def obtener_titulo(self): return self.titulo
+    def establecer_titulo(self, titulo): self.titulo = titulo
+
+    def obtener_autor(self): return self.autor
+    def establecer_autor(self, autor): self.autor = autor
+
+    def obtener_genero(self): return self.genero
+    def establecer_genero(self, genero): self.genero = genero
+
+    def obtener_numero_paginas(self): return self.numero_paginas
+    def establecer_numero_paginas(self, paginas): self.numero_paginas = paginas
+
+    def es_de_ficcion(self):
+        generos_ficcion = ["ficción", "novela", "fantasía", "ciencia ficción", "cuento", "terror"]
+        return self.genero.lower() in generos_ficcion
+
+if __name__ == "__main__":
+    libro1 = Libro("El Señor de los Anillos", "J.R.R. Tolkien", "Fantasía", 1178)
+    libro2 = Libro("Sapiens", "Yuval Noah Harari", "Historia", 498)
+    
+    print(f"El libro '{libro1.obtener_titulo()}' ¿es de ficción?: {libro1.es_de_ficcion()}")
+    print(f"El libro '{libro2.obtener_titulo()}' ¿es de ficción?: {libro2.es_de_ficcion()}")
