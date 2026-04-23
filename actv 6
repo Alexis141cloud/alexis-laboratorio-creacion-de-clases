@@ -1,0 +1,28 @@
+class Estudiante:
+    def __init__(self, nombre, edad, carrera):
+        self.nombre = nombre
+        self.edad = edad
+        self.carrera = carrera
+
+    def obtener_nombre(self): return self.nombre
+    def establecer_nombre(self, nombre): self.nombre = nombre
+
+    def obtener_edad(self): return self.edad
+    def establecer_edad(self, edad): self.edad = edad
+
+    def obtener_carrera(self): return self.carrera
+    def establecer_carrera(self, carrera): self.carrera = carrera
+
+    def calcular_nota_media(self, notas):
+        if not notas:
+            return 0
+        return sum(notas) / len(notas)
+
+if __name__ == "__main__":
+    estudiante1 = Estudiante("Ana", 22, "Ingeniería Informática")
+    
+    print(f"Estudiante: {estudiante1.obtener_nombre()} - {estudiante1.obtener_carrera()}")
+    
+    notas_examenes = [8.5, 9.0, 7.5, 10.0]
+    media = estudiante1.calcular_nota_media(notas_examenes)
+    print(f"La nota media es: {media:.2f}")
